@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915164905) do
+ActiveRecord::Schema.define(version: 20160915165650) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
@@ -25,8 +25,13 @@ ActiveRecord::Schema.define(version: 20160915164905) do
   create_table "transactions", force: :cascade do |t|
     t.decimal  "amount"
     t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
   end
+
+  add_index "transactions", ["receiver_id"], name: "index_transactions_on_receiver_id"
+  add_index "transactions", ["sender_id"], name: "index_transactions_on_sender_id"
 
 end
