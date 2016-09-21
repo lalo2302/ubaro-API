@@ -1,5 +1,7 @@
 class EndpointsController < ApplicationController
 
+  def index
+  end
   def authenticate
     # send as ~/477?pass=123
     phone = params[:param]
