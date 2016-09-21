@@ -34,3 +34,31 @@ Send a POST request with the id of the sender, the phone number of the receiver,
 <<url>>/endpoints/transaction/<id>.json?<phone>&amount=<amount>
 ```
 This will return `true` or `false` if the transaction was successful
+
+## Users
+id. Object
+  - name
+  - phone
+  - password
+  - balance
+
+1. Person 1
+  - José
+  - 4771231212
+  - 123
+  - 900
+2. Person 2
+  - Ramiro
+  - 4773009080
+  - 456
+  - 1200
+3. Person 3
+  - Lalo
+  - 4772901010
+  - 789
+  - 300
+4. Person 4
+  - Lucy
+  - 4774206666
+  - hey
+  - 420
