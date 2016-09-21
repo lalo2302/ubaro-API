@@ -11,7 +11,7 @@ class EndpointsController < ApplicationController
   end
 
   def transactions
-    id = params[:id]
+    id = params[:param]
     person = Person.find(id)
     transactions = person.transactions
     respond_to do |format|
@@ -20,6 +20,12 @@ class EndpointsController < ApplicationController
   end
 
   def balance
+    id = params[:param]
+    person = Person.find(id)
+    balance = person.balance.to_s
+    respond_to do |format|
+      format.json { render json: balance }
+    end
   end
 
   def transaction
