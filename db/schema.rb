@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160915165650) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.decimal  "balance"
@@ -31,7 +34,9 @@ ActiveRecord::Schema.define(version: 20160915165650) do
     t.integer  "receiver_id"
   end
 
-  add_index "transactions", ["receiver_id"], name: "index_transactions_on_receiver_id"
-  add_index "transactions", ["sender_id"], name: "index_transactions_on_sender_id"
+  add_index "transactions", ["receiver_id"], name: "index_transactions_on_receiver_id", using: :btree
+  add_index "transactions", ["sender_id"], name: "index_transactions_on_sender_id", using: :btree
 
+  add_foreign_key "transactions", "people", column: "receiver_id"
+  add_foreign_key "transactions", "people", column: "sender_id"
 end
