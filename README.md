@@ -4,7 +4,7 @@ A simple web api simulating money exchange between two parties.
 
 ## Request a Person object
 ```
-<url>/endpoints/authenticate/<phone>**.json**?pass=<password>
+<url>/endpoints/authenticate/<phone>.json?pass=<password>
 ```
 This will return something like this:
 ```
