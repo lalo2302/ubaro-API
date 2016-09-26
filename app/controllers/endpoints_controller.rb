@@ -39,6 +39,6 @@ class EndpointsController < ApplicationController
     transaction.receiver = receiver
     transaction.amount = amount
     result = transaction.make
-    render text: "#{result}"
+    return result
   end
 end
