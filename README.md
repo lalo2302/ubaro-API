@@ -31,7 +31,7 @@ This wil return the balance
 ## Make a transaction
 Send a POST request with the id of the sender, the phone number of the receiver, and the amount like this
 ```
-<<url>>/endpoints/transaction/<id>.json?phone=<phone>&amount=<amount>
+<<url>>/endpoints/transaction/<id>?phone=<phone>&amount=<amount>
 ```
 This will return `true` or `false` if the transaction was successful
 
