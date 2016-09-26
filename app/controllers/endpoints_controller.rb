@@ -31,15 +31,14 @@ class EndpointsController < ApplicationController
   end
 
   def transaction
-    sender = Person.find params[:param]
+    sender = Person.find params[:id]
     receiver = Person.find_by :phone => params[:phone] 
     amount = params[:amount]
     transaction = Transaction.new
     transaction.sender = sender
     transaction.receiver = receiver
     transaction.amount = amount
-    respond_to do |format|
-      format.json { render json: transaction.make }
-    end
+    result = transaction.make
+    render text: "#{result}"
   end
 end
