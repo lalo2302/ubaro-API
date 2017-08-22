@@ -62,3 +62,8 @@ id. Object
   - 4774206666
   - hey
   - 420
+6. Person 6
+  - Alejandro
+  - 4924264320
+  - axel
+  - 1500
